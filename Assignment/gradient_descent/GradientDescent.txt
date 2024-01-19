@@ -1,0 +1,49 @@
+﻿Gradient Descent
+
+
+Gradient descent is the technique that helps us to gain the global minimum in the cost vs weight 
+Graph..and we can achieve the best cofficents value for our machine-learning models..
+
+
+there are different types of gradient descents.. Here are three most popular types:
+
+
+Batch Gradient Descent: It's like looking at the entire landscape before deciding where to step.Then it calculate the average loss and update coefficient based on that.
+
+
+Code example:
+        ```
+        Initialize parameters theta
+        for each iteration until convergence:
+                calculate gradient = (1/m) * X.T @ (X @ theta - y)
+                update theta = theta - learning_rate * gradient
+
+
+        ```
+Stochastic Gradient Descent (SGD): Its takes random column from the dataset and calculate loss and update cofficent based on the loss..then take another random column from the dataset.
+
+
+Code example:
+        ```
+        Initialize parameters theta
+        for each iteration until convergence:
+                for each data point (xi, yi) in random order:
+                        calculate gradient = xi.T @ (xi @ theta - yi)
+                        update theta = theta - learning_rate * gradient
+        ```
+Mini-Batch Gradient Descent: This is a mix of the above two. It take small portion of the landscope from the entire dataset randomly and calculate thats portion’s average loss and the update the feature weight or coefficient values.
+
+
+Code example:
+        ```
+        Initialize parameters theta
+        for each iteration until convergence:
+                for each mini-batch (xi_batch, yi_batch) in random order:
+                calculate gradient = (1/batch_size) * xi_batch.T @ (xi_batch @ theta - yi_batch)
+                update theta = theta - learning_rate * gradient
+        ```
+
+
+
+
+N.B: "@" symbol is used for matrix multiplication
